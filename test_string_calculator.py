@@ -13,3 +13,8 @@ def test_add_single_number():
 def test_add_two_numbers():
     """Test that add returns the sum for two comma-separated numbers"""
     assert add("1,5") == 6
+
+def test_add_multiple_numbers():
+    """Test that add handles any amount of numbers"""
+    assert add("1,2,3,4,5") == 15
+    assert add("10,20,30") == 60
