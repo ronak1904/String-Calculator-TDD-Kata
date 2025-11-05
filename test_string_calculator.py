@@ -9,3 +9,7 @@ def test_add_empty_string():
 def test_add_single_number():
     """Test that add returns the number for a single number"""
     assert add("1") == 1
+
+def test_add_two_numbers():
+    """Test that add returns the sum for two comma-separated numbers"""
+    assert add("1,5") == 6
