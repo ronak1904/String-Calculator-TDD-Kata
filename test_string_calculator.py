@@ -18,3 +18,8 @@ def test_add_multiple_numbers():
     """Test that add handles any amount of numbers"""
     assert add("1,2,3,4,5") == 15
     assert add("10,20,30") == 60
+
+def test_add_with_newlines():
+    """Test that add handles newlines between numbers"""
+    assert add("1\n2,3") == 6
+    assert add("1\n2\n3") == 6
