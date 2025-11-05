@@ -34,4 +34,12 @@ def test_add_negative_number_single():
     """Test that add throws exception for a single negative number"""
     with pytest.raises(ValueError) as exc_info:
         add("-1")
-    assert "negative numbers not allowed -1" in str(exc_info.value)
+    assert "negative numbers not allowed -1" in str(exc_info.value) 
+
+def test_add_negative_numbers_multiple():
+    """Test that add shows all negative numbers in exception message"""
+    with pytest.raises(ValueError) as exc_info:
+        add("-1,-2,3")
+    assert "negative numbers not allowed" in str(exc_info.value)
+    assert "-1" in str(exc_info.value)
+    assert "-2" in str(exc_info.value)
