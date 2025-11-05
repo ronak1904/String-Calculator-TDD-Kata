@@ -23,3 +23,9 @@ def test_add_with_newlines():
     """Test that add handles newlines between numbers"""
     assert add("1\n2,3") == 6
     assert add("1\n2\n3") == 6
+
+def test_add_custom_delimiter():
+    """Test that add supports custom delimiters"""
+    assert add("//;\n1;2") == 3
+    assert add("//|\n1|2|3") == 6
+    assert add("//@\n10@20") == 30
