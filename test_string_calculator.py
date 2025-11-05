@@ -29,3 +29,9 @@ def test_add_custom_delimiter():
     assert add("//;\n1;2") == 3
     assert add("//|\n1|2|3") == 6
     assert add("//@\n10@20") == 30
+
+def test_add_negative_number_single():
+    """Test that add throws exception for a single negative number"""
+    with pytest.raises(ValueError) as exc_info:
+        add("-1")
+    assert "negative numbers not allowed -1" in str(exc_info.value)
